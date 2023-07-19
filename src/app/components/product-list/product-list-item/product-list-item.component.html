@@ -1,0 +1,10 @@
+<ul class="list-group">
+  <li class="list-group-item">
+    <p style="display: inline">{{ singleProduct[index].title }}</p>
+    <p>{{ "$" + singleProduct[index].price }}</p>
+    <img [src]="imageUrl" />
+    <button class="btn btn-default" (click)="rutaView()">View Details</button>
+    <button class="btn btn-primary" (click)="rutaEdit()">Edit</button>
+    <button class="btn btn-danger" (click)="onDelete()">Delete</button>
+  </li>
+</ul>
