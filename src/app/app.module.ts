@@ -4,7 +4,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductListItemComponent } from './components/product-list/product-list-item/product-list-item.component';
 import { ProductAddComponent } from './components/product-list/product-list-item/product-add/product-add.component';
 import { ProductViewComponent } from './components/product-list/product-list-item/product-view/product-view.component';
@@ -23,6 +23,7 @@ import { ProductEditComponent } from './components/product-list/product-list-ite
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     ReactiveFormsModule
   ],
   providers: [],

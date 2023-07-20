@@ -14,12 +14,7 @@ export class ProductListItemComponent implements OnInit {
 
   constructor(private productService: ProductService, private router: Router) {}
 
-  ngOnInit(): void {
-    if(this.imageUrl == null){
-        this.imageUrl = this.singleProduct[this.index].images;
-        //dodjeljivanje validnog image url-a za jedini produkt koji nema array linkova u objektu
-    }
-  }
+  ngOnInit(): void {}
 
   rutaView() {
     this.router.navigate([this.index]);
