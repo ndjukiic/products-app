@@ -1,7 +1,8 @@
-<div>List
-    <app-product-list-item *ngFor="let product of products; let i = index"
-    [singleProduct]="products"
-    [index]="i"
-    [imageUrl]="products[i].thumbnail"></app-product-list-item>
+<h1>Product list</h1>
+<div>
+  <app-product-list-item
+    *ngFor="let product of products"
+    [product]="product"
+  ></app-product-list-item>
 </div>
 <button class="btn btn-success" (click)="addProduct()">Add product</button>

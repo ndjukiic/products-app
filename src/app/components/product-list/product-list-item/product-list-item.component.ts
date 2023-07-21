@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Product } from 'src/app/models/product.model';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -8,23 +9,21 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./product-list-item.component.css'],
 })
 export class ProductListItemComponent implements OnInit {
-  @Input() singleProduct: any;
-  @Input() index!: number;
-  @Input() imageUrl!: string;
+  @Input() product: Product;
 
   constructor(private productService: ProductService, private router: Router) {}
 
   ngOnInit(): void {}
 
   rutaView() {
-    this.router.navigate([this.index]);
+    this.router.navigate([this.product.id - 1]);
   }
 
   rutaEdit() {
-    this.router.navigate(['/edit' + '/' + this.index]);
+    this.router.navigate(['/edit' + '/' + (this.product.id - 1)]);
   }
 
   onDelete() {
-    this.productService.delete(this.index);
+    this.productService.delete(this.product.id); //BUG
   }
 }

@@ -18,7 +18,9 @@ export class ProductViewComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    this.products = this.productService.list();
+    this.productService.list().subscribe((recievedData) => {
+      this.products = recievedData;
+    });
     this.index = this.route.snapshot.paramMap.get('id');
   }
 

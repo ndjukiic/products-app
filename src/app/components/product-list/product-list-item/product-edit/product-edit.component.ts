@@ -22,7 +22,8 @@ export class ProductEditComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       this.id = +params['id'];
-      if (this.router.url.includes('/edit') && params['id'] != null) { //ako se u linku nalaze /edit/:id, znači da smo u "edit modu"
+      if (this.router.url.includes('/edit') && params['id'] != null) {
+        //ako se u linku nalaze /edit/:id, znači da smo u "edit modu"
         this.editMode = true;
       }
       this.loadProduct();
@@ -56,7 +57,7 @@ export class ProductEditComponent implements OnInit {
       price: new FormControl(newPrice),
       brand: new FormControl(newBrand),
       category: new FormControl(newCategory),
-      thumbnail: new FormControl(newThumbnail)
+      thumbnail: new FormControl(newThumbnail),
     });
   }
 }

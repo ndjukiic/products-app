@@ -15,21 +15,27 @@ export class ProductService {
 
   constructor(private httpClient: HttpClient) {}
 
-  load(): Observable<any[]> {
+  load(): Observable<Product[]> {
     if (this.products.length) {
       return of(this.products);
     }
 
     return this.httpClient.get(this.url).pipe(
-      map((response: any) => {
+      map((response: { products: Product[] }) => {
+        //kako response sam po sebi nema pristup nizu products unutar liste property-ja objekta koji dobija kao observable odgovor,
+        //tako moramo da dodamo products tipa Product[] da bi dobili niz kako treba
         this.products = response.products;
         return this.products;
       })
     );
   }
 
-  list() {
-    return this.products;
+  list(): Observable<Product[]> {
+    if (this.products.length) {
+      return of(this.products);
+    } else {
+      return this.load();
+    }
   }
 
   get(id: number) {

@@ -5,9 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-  // odradi() {
-  //   fetch('https://dummyjson.com/products')
-  //     .then((res) => res.json())
-  //     .then(console.log);
-  // }
 }
