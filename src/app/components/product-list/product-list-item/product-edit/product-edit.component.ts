@@ -31,7 +31,7 @@ export class ProductEditComponent implements OnInit {
 
   onEditSubmit() {
     console.log(this.productEditForm);
-    this.productService.update(this.id, this.productEditForm.value);
+    this.productService.update(this.id, this.productEditForm.value).subscribe();
     this.router.navigate(['../../']);
   }
 

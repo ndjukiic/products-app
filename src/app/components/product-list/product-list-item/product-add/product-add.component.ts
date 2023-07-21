@@ -19,7 +19,7 @@ export class ProductAddComponent implements OnInit {
 
   onFormSubmit() {
     if (this.reactiveForm.valid) {
-      this.productService.add(this.reactiveForm.value);
+      this.productService.add(this.reactiveForm.value).subscribe();
       this.reactiveForm.reset();
       this.router.navigate(['../']);
     }
