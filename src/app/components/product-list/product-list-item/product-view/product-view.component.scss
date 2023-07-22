@@ -1,9 +1,43 @@
-#display {
-  margin: 3rem auto;
-  padding: 2.5rem;
-  border: 1px solid black;
-  border-radius: 6px;
-  box-shadow: 2px 1px 1px rgb(0, 0, 0, 0.2);
-  background-color: antiquewhite;
+article {
+  border: 1px solid rgb(175, 175, 175);
+  border-radius: 5px;
+  margin: 6rem auto;
   width: 50%;
+  background-color: #d9f3fa8c;
+}
+
+article img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20rem;
+  margin: 1rem auto;
+}
+
+article ul {
+  width: 95%;
+  margin: 1rem auto;
+}
+
+#li-style {
+  display: flex;
+  justify-content: space-between;
+  align-content: flex-start;
+}
+
+#li-style:hover{
+    background-color: #c0eff8;
+    transition: 0.6s;
+}
+
+#text-view {
+  text-align: center;
+}
+
+.buttons-div {
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 1rem auto;
 }

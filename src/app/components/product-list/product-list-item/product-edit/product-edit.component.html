@@ -1,4 +1,4 @@
-<p>product-edit works!</p>
+<h1>Edit a product</h1>
 <form [formGroup]="productEditForm" (ngSubmit)="onEditSubmit()">
   <div class="form-group">
     <label for="name">Product Name:</label>
@@ -32,6 +32,24 @@
     />
   </div>
   <div class="form-group">
+    <label for="description">Product description:</label>
+    <input
+      type="text"
+      id="description"
+      formControlName="description"
+      class="form-control"
+    />
+  </div> 
+  <div class="form-group">
+    <label for="rating">Product rating:</label>
+    <input
+      type="number"
+      id="rating"
+      formControlName="rating"
+      class="form-control"
+    />
+  </div>
+   <div class="form-group">
     <label for="thumbnail">Product thumbnail:</label>
     <input
       type="text"
@@ -42,4 +60,6 @@
   </div>
   <button class="btn btn-primary" type="submit">Save</button>
 </form>
-<img [src]="productEditForm.value.thumbnail" alt="" />
+<div id="img-div">
+<img [src]="productEditForm.value.thumbnail" alt="Thumbnail preview" />
+</div>

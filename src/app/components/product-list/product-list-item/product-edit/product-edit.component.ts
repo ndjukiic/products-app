@@ -42,6 +42,8 @@ export class ProductEditComponent implements OnInit {
     let newBrand = '';
     let newCategory = '';
     let newThumbnail = '';
+    let newDescription = '';
+    let newRating = 0;
 
     if (this.editMode) {
       const product = this.productService.get(this.id);
@@ -50,6 +52,8 @@ export class ProductEditComponent implements OnInit {
       newBrand = product.brand;
       newCategory = product.category;
       newThumbnail = product.thumbnail;
+      newDescription = product.description;
+      newRating = product.rating;
     }
 
     this.productEditForm = new FormGroup({
@@ -58,6 +62,8 @@ export class ProductEditComponent implements OnInit {
       brand: new FormControl(newBrand),
       category: new FormControl(newCategory),
       thumbnail: new FormControl(newThumbnail),
+      description: new FormControl(newDescription),
+      rating: new FormControl(newRating),
     });
   }
 }

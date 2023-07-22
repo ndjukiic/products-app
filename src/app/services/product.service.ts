@@ -59,6 +59,8 @@ export class ProductService {
               brand: response.brand,
               category: response.category,
               thumbnail: response.thumbnail,
+              description: response.description,
+              rating: response. rating
             }),
           })
             .then((res) => res.json())
@@ -84,6 +86,8 @@ export class ProductService {
               brand: response.brand,
               category: response.category,
               thumbnail: response.thumbnail,
+              description: response.description,
+              rating: response.rating
             }),
           })
             .then((res) => res.json())
@@ -93,17 +97,19 @@ export class ProductService {
   }
 
   delete(id: number) {
-    console.log('IZBRISAN PRODUKT: ' + this.products[id].title);
-    this.products.splice(id, 1);
+    const deleteUrl = 'https://dummyjson.com/products/' + id;
+    const indexToRemove = this.products.indexOf(this.products[id]) - 1;
+    this.products.splice(indexToRemove, 1);
 
-    return this.httpClient
-      .delete('https://dummyjson.com/products/' + (id + 1))
-      .subscribe(() => {
-        fetch('https://dummyjson.com/products/' + (id + 1), {
-          method: 'DELETE',
-        })
-          .then((res) => res.json())
-          .then(console.log);
-      });
+    // console.log(this.products.splice((--id),1));
+    // this.products.splice((--id), 1);
+
+    return this.httpClient.delete(deleteUrl).subscribe(() => {
+      fetch(deleteUrl, {
+        method: 'DELETE',
+      })
+        .then((res) => res.json())
+        .then(console.log);
+    });
   }
 }

@@ -1,9 +1,14 @@
 h1 {
+  top: 0;
+  left: 0;
+  margin-top: 0;
+  padding: 5rem;
   text-align: center;
   margin-bottom: 8rem;
+  background-image: linear-gradient(to bottom, #6190E8, #A7BFE8);
 }
 
-div {
+#app-product {
   width: 70%;
   list-style: none;
   margin: 0 auto;
@@ -12,5 +17,12 @@ div {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   justify-content: center;
-  gap: 0;
+  gap: 3rem;
+}
+
+#add-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5rem;
 }

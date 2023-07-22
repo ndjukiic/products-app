@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Product } from 'src/app/models/product.model';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -8,8 +9,8 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./product-view.component.scss'],
 })
 export class ProductViewComponent implements OnInit, OnDestroy {
-  products: any[] = [];
-  index!: any;
+  products: Product[] = [];
+  index!: number;
 
   constructor(
     private productService: ProductService,
@@ -19,9 +20,10 @@ export class ProductViewComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.productService.list().subscribe((recievedData) => {
-      this.products = recievedData;
+      this.products[this.index] = recievedData[this.index];
     });
-    this.index = this.route.snapshot.paramMap.get('id');
+    this.index = +this.route.snapshot.paramMap.get('id');
+    console.log(self);
   }
 
   ngOnDestroy(): void {}

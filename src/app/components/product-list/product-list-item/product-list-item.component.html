@@ -1,15 +1,24 @@
 <div>
   <ul class="list-group">
     <li class="list-group-item">
-      <img [src]="product.thumbnail" />
-      <p style="text-align: center">
-        {{ product.title }}
-        <br />
-        ${{ product.price }}
-      </p>
-      <button class="btn btn-default" (click)="rutaView()">View Details</button>
-      <button class="btn btn-primary" (click)="rutaEdit()">Edit</button>
-      <button class="btn btn-danger" (click)="onDelete()">Delete</button>
+      <article>
+        <img [src]="product.thumbnail" />
+        <div class="text-content">
+          <p id="title">
+            {{ product.title }}
+          </p>
+
+          <p id="price">${{ product.price }}</p>
+        </div>
+        <div class="buttons">
+          <button class="btn btn-info" (click)="rutaView()">
+            
+            View Details
+          </button>
+          <button class="btn btn-primary" (click)="rutaEdit()">Edit</button>
+          <button class="btn btn-danger" (click)="onDelete()">Delete</button>
+        </div>
+      </article>
     </li>
   </ul>
 </div>

@@ -16,7 +16,11 @@ export class ProductListItemComponent implements OnInit {
   ngOnInit(): void {}
 
   rutaView() {
-    this.router.navigate([this.product.id - 1]);
+    //povezana reload metoda nakon navigacije zbog nepravilnog učitavanja stranice 
+    //(nakon rutiranja je bio potreban ručni reload da bi se učitali podaci)
+    this.router.navigate([this.product.id - 1]).then(() => {
+      window.location.reload();
+    });
   }
 
   rutaEdit() {
@@ -24,6 +28,6 @@ export class ProductListItemComponent implements OnInit {
   }
 
   onDelete() {
-    this.productService.delete(this.product.id); //BUG
+    this.productService.delete(this.product.id);
   }
 }

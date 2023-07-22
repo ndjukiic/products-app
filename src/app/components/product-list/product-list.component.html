@@ -1,8 +1,10 @@
 <h1>Product list</h1>
-<div>
+<div id="app-product">
   <app-product-list-item
     *ngFor="let product of products"
     [product]="product"
   ></app-product-list-item>
 </div>
-<button class="btn btn-success" (click)="addProduct()">Add product</button>
+<div id="add-btn">
+<button class="btn btn-success" (click)="addProduct()">Add a new product</button>
+</div>

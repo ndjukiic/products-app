@@ -1,8 +1,38 @@
-<p>product-view works!</p>
-<div id="display">
-    <h2 style="text-align:center;">{{ products[index].title + '  -     $' + products[index].price }}</h2>
-    <img [src]="products[index].images[0]" style="margin: 1rem auto;border-radius: 3px;">
-    <hr>
+<article>
+  <img [src]="products[index].thumbnail" alt="Product thumbnail" />
+  <div id="text-view">
+    <h2 style="text-align: center">
+      {{ products[index].title + "  -     $" + products[index].price }}
+    </h2>
+  </div>
+  <div class="buttons-div">
     <button class="btn btn-primary" (click)="onEdit()">Edit</button>
     <button class="btn btn-danger" (click)="onDelete()">Delete</button>
-</div>
+  </div>
+  <ul class="list-group">
+    <li class="list-group-item list-group-item-info" id="li-style">
+      <p>Brand</p>
+      <p>
+        {{ products[index].brand }}
+      </p>
+    </li>
+    <li class="list-group-item list-group-item-info" id="li-style">
+        <p id="brandp">Category</p>
+        <p>
+          {{ products[index].category }}
+        </p>
+    </li>
+    <li class="list-group-item list-group-item-info" id="li-style">
+        <p id="brandp">Description</p>
+        <p style="width: 40%;">
+          {{ products[index].description }}
+        </p>
+    </li>
+    <li class="list-group-item list-group-item-info" id="li-style">
+        <p id="brandp">Rating</p>
+        <p>
+          {{ products[index].rating }}
+        </p>
+    </li>
+  </ul>
+</article>
